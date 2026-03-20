@@ -3,7 +3,8 @@ from flask_cors import CORS
 import joblib
 import numpy as np
 import os
-app = Flask(__name__, static_folder="../frontend/dist", static_url_path="/")CORS(app)
+app = Flask(__name__, static_folder="../frontend/dist", static_url_path="/")
+CORS(app)
 
 # load your trained model
 model = joblib.load("mental_stress_model.pkl")
