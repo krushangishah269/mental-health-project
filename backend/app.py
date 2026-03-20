@@ -7,6 +7,7 @@ app = Flask(__name__, static_folder="../frontend/dist", static_url_path="/")CORS
 
 # load your trained model
 model = joblib.load("mental_stress_model.pkl")
+
 @app.route("/")
 def serve():
     return send_from_directory(app.static_folder, "index.html")
@@ -14,10 +15,6 @@ def serve():
 @app.route("/<path:path>")
 def serve_react(path):    
     return send_from_directory(app.static_folder, "index.html")
-
-@app.route("/")
-def home():
-    return "Mental Stress Prediction API Running"
 
 @app.route("/predict", methods=["POST"])
 def predict():
@@ -37,7 +34,5 @@ def predict():
     return jsonify({"prediction": int(prediction[0])})
 
 if __name__ == "__main__":
-
-    app.run(debug=True)
     port = int(os.environ.get("PORT",5000))
     app.run(host="0.0.0.0",port=port)
