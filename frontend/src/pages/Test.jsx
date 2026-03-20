@@ -69,7 +69,7 @@ if(!valid) return
 try{
 
 const response = await axios.post(
-"http://127.0.0.1:5000/predict",
+"https://mental-health-project-8czr.onrender.com/predict",
 {
 age:Number(age),
 stress_level:Number(stress),
