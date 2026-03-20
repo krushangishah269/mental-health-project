@@ -1,0 +1,140 @@
+body{
+  margin:0;
+  font-family: "Segoe UI", sans-serif;
+  background:beige;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  min-height:100vh;
+  padding:20px;
+}
+
+.container{
+background:white;
+width:100%;
+max-width:650px;
+padding:40px;
+border-radius:12px;
+box-shadow:0px 10px 25px rgba(0,0,0,0.15);
+text-align:center;
+}
+
+
+h1{
+  
+  color:#3e4a3f;
+  margin: bottom 30px;
+  white-space: nowrap;
+}
+
+h2{
+  color:#3e4a3f;
+  margin-bottom:20px;
+}
+
+label{
+  display:block;
+  text-align:left;
+  margin-top:15px;
+  font-weight:500;
+  color:#4b4b4b;
+}
+
+input{
+  width:100%;
+  padding:12px;
+  margin-top:6px;
+  border-radius:6px;
+  border:1px solid #ccc;
+  font-size:15px;
+  box-sizing:border-box;
+
+}
+
+button{
+  margin-top:25px;
+  width:100%;
+  padding:12px;
+  border:none;
+  border-radius:8px;
+
+  font-size:16px;
+  font-weight:600;
+
+  background:#6b8e6b;
+  color:white;
+
+  cursor:pointer;
+
+  transition:0.3s;
+
+}
+
+button:hover{
+  background:#5c7d5c;
+}
+
+.result-green{
+  color:#4CAF50;
+}
+
+.result-yellow{
+  color:#ece90c;
+}
+
+.result-red{
+  color:#d9534f;
+}
+
+@media (max-width:600px){
+
+.container{
+
+padding:25px;
+
+}
+
+h1{
+font-size:24px;
+}
+
+}
+
+.error {
+  color: red;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+.line2 {
+  font-size: 26px;
+  margin: 15px 0;
+}
+
+.line3 {
+  font-size: 16px;
+  color: #555;
+  font-weight: bold;   /* ✅ ADD THIS */
+}
+
+.name {
+  color: #6c9a8b;
+  font-weight: bold;
+}
+
+/* LOW = light green box */
+.container.low {
+  background-color: #f2f3ee;
+  border: 2px solid #2e7d32;
+}
+
+/* MODERATE = light yellow box */
+.container.moderate {
+  background-color: #fdfbd6;   /* light yellow */
+  border: 2px solid #fffb25;   /* dark yellow */
+}
+/* HIGH = light red box */
+.container.high {
+  background-color: #fdecea;
+  border: 2px solid #c62828;
+}
+
