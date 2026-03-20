@@ -1,13 +1,19 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, send_from_directory
 from flask_cors import CORS
 import joblib
 import numpy as np
 import os
-app = Flask(__name__)
-CORS(app)
+app = Flask(__name__, static_folder="../frontend/dist", static_url_path="/")CORS(app)
 
 # load your trained model
 model = joblib.load("mental_stress_model.pkl")
+@app.route("/")
+def serve():
+    return send_from_directory(app.static_folder, "index.html")
+
+@app.route("/<path:path>")
+def serve_react(path):    
+    return send_from_directory(app.static_folder, "index.html")
 
 @app.route("/")
 def home():
