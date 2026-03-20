@@ -3,7 +3,10 @@ from flask_cors import CORS
 import joblib
 import numpy as np
 import os
-app = Flask(__name__, static_folder="../frontend/dist", static_url_path="/")
+
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+FRONTEND_PATH = os.path.join(BASE_DIR, "frontend", "dist")
+app = Flask(__name__, static_folder="/frontend/dist", static_url_path="/")
 CORS(app)
 
 # load your trained model
